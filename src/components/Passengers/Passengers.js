@@ -5,17 +5,34 @@ import React, { Component } from 'react';
 
 class Passengers extends Component {
 
+  state = {
+    passenger: ''
+  }
+
   componentDidMount() {
     console.log( 'passengers mounted' );
   }
-  
+
+  handleChange = (event) => {
+    console.log('in handleChange', event.target.value);
+    this.setState({
+      passenger: event.target.value
+    }) // end setState
+  } // end handleChange
+
+  handleClick = () => {
+    console.log( 'in handleClick' );
+    this.props.dispatch({ type: 'passenger', payload: this.state.passenger })
+  } // end handleClick
+
   render() {
+    // let list = this.props.reduxState;
     return (
       <div>
         <h2>Passengers</h2>
-
-        <input type="text" name="name" placeholder="Enter Name" />
-        <button>Add Passenger</button>
+        {/* <p>{JSON.stringify(this.props.reduxState)}</p> */}
+        <input type="text" name="name" placeholder="Enter Name" onChange={this.handleChange} />
+        <button onClick={this.handleClick}>Add Passenger</button>
 
         <ul>PASSENGER LIST: GOES HERE</ul>
       

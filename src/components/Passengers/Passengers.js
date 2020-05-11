@@ -4,6 +4,11 @@ import React, { Component } from 'react';
 // INPUT SHOULD COLLECT INFO, BUTTON SHOULD ADD THEM TO THE LIST
 
 class Passengers extends Component {
+
+  componentDidMount() {
+    console.log( 'passengers mounted' );
+  }
+  
   render() {
     return (
       <div>

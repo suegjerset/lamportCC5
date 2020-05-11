@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import reduxLogo from './redux.svg';
 import './App.css';
+import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 // components
@@ -11,6 +12,11 @@ import Dashboard from '../Dashboard/Dashboard';
 
 
 class App extends Component {
+
+  componentDidMount() {
+    console.log( this.props );
+  }
+
   render() {
     return (
       <Router>
@@ -36,8 +42,10 @@ class App extends Component {
 
           </div>
       </Router>
-    );
-  }
-}
+    ); // end return
+  } // end render
+} // end class
 
-export default App;
+const reduxStateToProps = (reduxState) => ({ reduxState });
+
+export default connect(reduxStateToProps)(App);

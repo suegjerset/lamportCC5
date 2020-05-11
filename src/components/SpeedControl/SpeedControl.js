@@ -19,13 +19,13 @@ class SpeedControl extends Component {
   } // end clickHandler
 
   render() {
-    // let speedometer = this.props.reduxState;
+    let speedometer = this.props.reduxState;
     return (
       <div>
         <h2>Speed Control</h2>
-
+        {/* <p>{JSON.stringify(this.props.reduxState)}</p> */}
         <button onClick={(event) => this.clickHandler(event, 'increase')}>Increase Speed</button>
-        <p>SPEED: {this.props.reduxState}</p>
+        <p>SPEED: {speedometer.speed}</p>
         <button onClick={(event) => this.clickHandler(event, 'decrease')}>Decrease Speed</button>
       </div>
     )

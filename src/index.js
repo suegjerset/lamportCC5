@@ -6,13 +6,9 @@ import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-// put your reducers here!
+// put your reducer here!
 
 
-// be sure to combine your reducers!
-const storeInstance = createStore(
-  // reducers,
-  applyMiddleware(logger)
-)
+const storeInstance = createStore( )
 
 ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, document.getElementById('root'));
